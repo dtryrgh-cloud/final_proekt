@@ -18,8 +18,6 @@ def create_order():
 
     )
 
-    print(f'Create order: статус {response.status_code}, тело: {response.text}')
-
     return response
 
 # Для получения заказа по номеру трека отправляем GET запрос и возвращаем объект ответа
@@ -29,7 +27,5 @@ def get_order_by_track(track):
     params = {'t': track}
 
     response = requests.get(url, params=params)
-
-    print(f'Get order by track: статус {response.status_code}, тело: {response.text}')
 
     return response
